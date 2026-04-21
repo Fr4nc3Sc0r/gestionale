@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="label_cod_fiscale" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="label_nome" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                          <Component id="label_cognome" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                          <Component id="label_indirizzo" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                          <Component id="inp_indirizzoDiResidenza" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
+                          <Component id="inp_nome" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
+                          <Component id="inp_cod_fiscale" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
+                          <Component id="inp_cognome" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
+                          <Component id="label_cittàDiResidenza" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                          <Component id="inp_cittàDiResidenza" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
+                          <Component id="button_salva" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="data_errori" pref="404" max="32767" attributes="0"/>
+                          <Component id="label_datiAssistito" min="-2" pref="133" max="-2" attributes="0"/>
+                          <Component id="label_errori" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="data_assistito" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+              <Component id="label_cod_fiscale" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="label_datiAssistito" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="data_assistito" min="-2" pref="209" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="inp_cod_fiscale" min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="label_nome" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="inp_nome" min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="label_cognome" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="inp_cognome" min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <Component id="label_indirizzo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="inp_indirizzoDiResidenza" min="-2" pref="39" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="label_cittàDiResidenza" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="inp_cittàDiResidenza" min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="button_salva" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="label_errori" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="data_errori" min="-2" pref="72" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="62" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="inp_cod_fiscale">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Codice Fiscale"/>
+        <Property name="actionCommand" type="java.lang.String" value="&lt;Not Set&gt;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inp_nome">
+    </Component>
+    <Component class="javax.swing.JTextField" name="inp_indirizzoDiResidenza">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inp_indirizzoDiResidenzaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inp_cognome">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inp_cognomeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_cod_fiscale">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Codice Fiscale"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_nome">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nome"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_cognome">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cognome"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_indirizzo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Indirizzo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_citt&#xe0;DiResidenza">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Citt&#xe0; di residenza"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inp_citt&#xe0;DiResidenza">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inp_citt&#xe0;DiResidenzaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="button_salva">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salva"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_salvaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="data_assistito">
+    </Component>
+    <Component class="javax.swing.JLabel" name="data_errori">
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_datiAssistito">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dati assistito corrente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_errori">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Errori"/>
+      </Properties>
+    </Component>
+  </SubComponents>
+</Form>
