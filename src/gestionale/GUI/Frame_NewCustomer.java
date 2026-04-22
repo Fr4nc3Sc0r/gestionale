@@ -5,7 +5,7 @@
 package gestionale.GUI;
 import gestionale.GUI.Main_Frame;
 import gestionale.Assistito;
-import gestionale.Database;
+import gestionale.Controller;
 
 /**
  *
@@ -13,6 +13,7 @@ import gestionale.Database;
  */
 public class Frame_NewCustomer extends Main_Frame {
 
+    
     /**
      * Creates new form Frame_NewCustomer
      */
@@ -179,7 +180,7 @@ public class Frame_NewCustomer extends Main_Frame {
 
     private void button_salvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_salvaActionPerformed
         Assistito assistito = new Assistito(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), inp_indirizzoDiResidenza.getText(), inp_cittàDiResidenza.getText());
-        
+        controller.salva(assistito);
     }//GEN-LAST:event_button_salvaActionPerformed
 
     /**

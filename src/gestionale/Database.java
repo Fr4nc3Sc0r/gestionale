@@ -30,7 +30,7 @@ public class Database {
         salva();
         }
         else{
-            System.out.println("sehhhhhh");
+            System.out.println("codice fiscale esistente");
         }
     }
     
@@ -50,7 +50,7 @@ public class Database {
             {  
                 
                 fOut.writeObject(databaseAssistiti.elementAt(i));
-                System.out.println("sono qui ho appena salvato un elemento correttamente");
+                System.out.println("ho appena salvato un elemento correttamente");
             }
             
             f.close();
@@ -78,12 +78,13 @@ public class Database {
             FileInputStream f = new FileInputStream("assistiti.dat");
             ObjectInputStream fIn = new ObjectInputStream(f);
             Assistito obj;
+            int i = 0;
             
             try{
             while((obj = (Assistito) fIn.readObject()) != null){
                 
                 databaseAssistiti.add(obj);
-                //System.out.println("sono qui");
+                System.out.println("ho caricato " + ++i + " elementi" );
             }
             //System.out.println("sono qui");
             

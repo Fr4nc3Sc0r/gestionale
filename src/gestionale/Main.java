@@ -14,8 +14,8 @@ public class Main {
 
     public static void main(String[] args) {
         
-        Assistito assistito = new Assistito("ciccio", "ciccio","ciccio","ciccio","ciccio");
-        Database database = new Database();
+        //Assistito assistito = new Assistito("ciccio", "ciccio","ciccio","ciccio","ciccio");
+        //Database database = new Database();
         
         //database.buffer(assistito);
         //database.svuotaBuffer();
@@ -23,9 +23,8 @@ public class Main {
         
         //database.print(0);
         
-        database.carica();
+        //database.carica();
         
-        database.bufferAndSave(assistito);
         
         SwingUtilities.invokeLater(() -> {
             Main_Frame gui = new Main_Frame();

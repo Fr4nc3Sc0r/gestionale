@@ -4,18 +4,21 @@
  */
 package gestionale.GUI;
 import gestionale.GUI.Frame_NewCustomer;
-
+import gestionale.Controller;
 /**
  *
  * @author franc
  */
 public class Main_Frame extends javax.swing.JFrame {
 
+    Controller controller = new Controller();
+    
     /**
      * Creates new form Main_Frame
      */
     public Main_Frame() {
         initComponents();
+        controller.carica();
         
     }
 
