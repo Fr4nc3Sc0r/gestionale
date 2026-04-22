@@ -104,5 +104,14 @@ public class Database {
         return databaseAssistiti;
     }
     
+    protected Assistito getAssistito(String cod_fiscale){
+        Assistito assistito = null;
+        for(int i = 0; i < databaseAssistiti.size(); i++){
+            if(databaseAssistiti.elementAt(i).an_codiceFiscale.equals(cod_fiscale))
+                assistito = databaseAssistiti.elementAt(i);
+        }
+        return assistito;
+    }
+    
     
 }

@@ -109,6 +109,8 @@ public class Main_Frame extends javax.swing.JFrame {
 
     private void jMenuItem_Clienti_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_Clienti_editActionPerformed
         // TODO add your handling code here:
+        Frame_ExistsCustomer edit = new Frame_ExistsCustomer();
+        edit.showFrame();
     }//GEN-LAST:event_jMenuItem_Clienti_editActionPerformed
 
     /**

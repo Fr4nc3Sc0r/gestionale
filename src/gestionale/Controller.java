@@ -25,4 +25,8 @@ public class Controller {
         database.carica();
     }
     
+    public Assistito edit(String cod_Fiscale){
+        return database.getAssistito(cod_Fiscale);
+    }
+    
 }

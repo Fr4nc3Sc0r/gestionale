@@ -84,7 +84,12 @@ public class Assistito extends Entita implements Serializable{
     
     @Override
     public String toString() {
-        return "Assistito: " + "\ncodiceFiscale->" + an_codiceFiscale + ", \nnome->" + an_nome + ", \ncognome->" + an_cognome + ", \nindirizzo->" + an_indirizzo + ", \ncittaDiResidenza->" + an_cittaDiResidenza;
+        return "\nAssistito: " + 
+                "\ncodiceFiscale->" + an_codiceFiscale + ", "
+                + "\nnome->" + an_nome + ", "
+                + "\ncognome->" + an_cognome + ", "
+                + "\nindirizzo->" + an_indirizzo + ", "
+                + "\ncittaDiResidenza->" + an_cittaDiResidenza;
     }
     
     

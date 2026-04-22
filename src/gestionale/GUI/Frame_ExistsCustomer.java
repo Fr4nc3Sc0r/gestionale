@@ -5,21 +5,18 @@
 package gestionale.GUI;
 import gestionale.GUI.Main_Frame;
 import gestionale.Assistito;
-import gestionale.Controller;
 
 /**
  *
  * @author franc
  */
-public class Frame_NewCustomer extends Main_Frame {
+public class Frame_ExistsCustomer extends Main_Frame {
 
-    
     /**
-     * Creates new form Frame_NewCustomer
+     * Creates new form Frame_ExistsCustomer
      */
-    public Frame_NewCustomer() {
+    public Frame_ExistsCustomer() {
         initComponents();
-        
     }
     
     public void showFrame(){
@@ -35,13 +32,6 @@ public class Frame_NewCustomer extends Main_Frame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        inp_cod_fiscale = new javax.swing.JTextField();
-        inp_nome = new javax.swing.JTextField();
-        inp_indirizzoDiResidenza = new javax.swing.JTextField();
-        inp_cognome = new javax.swing.JTextField();
-        label_cod_fiscale = new javax.swing.JLabel();
-        label_nome = new javax.swing.JLabel();
-        label_cognome = new javax.swing.JLabel();
         label_indirizzo = new javax.swing.JLabel();
         label_cittàDiResidenza = new javax.swing.JLabel();
         inp_cittàDiResidenza = new javax.swing.JTextField();
@@ -50,6 +40,37 @@ public class Frame_NewCustomer extends Main_Frame {
         data_errori = new javax.swing.JLabel();
         label_datiAssistito = new javax.swing.JLabel();
         label_errori = new javax.swing.JLabel();
+        inp_cod_fiscale = new javax.swing.JTextField();
+        inp_nome = new javax.swing.JTextField();
+        inp_indirizzoDiResidenza = new javax.swing.JTextField();
+        inp_cognome = new javax.swing.JTextField();
+        label_cod_fiscale = new javax.swing.JLabel();
+        label_nome = new javax.swing.JLabel();
+        label_cognome = new javax.swing.JLabel();
+        button_salva1 = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        label_indirizzo.setText("Indirizzo");
+
+        label_cittàDiResidenza.setText("Città di residenza");
+
+        inp_cittàDiResidenza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inp_cittàDiResidenzaActionPerformed(evt);
+            }
+        });
+
+        button_salva.setText("Salva");
+        button_salva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button_salvaActionPerformed(evt);
+            }
+        });
+
+        label_datiAssistito.setText("Dati assistito corrente");
+
+        label_errori.setText("Errori");
 
         inp_cod_fiscale.setToolTipText("Codice Fiscale");
         inp_cod_fiscale.setActionCommand("<Not Set>");
@@ -72,30 +93,13 @@ public class Frame_NewCustomer extends Main_Frame {
 
         label_cognome.setText("Cognome");
 
-        label_indirizzo.setText("Indirizzo");
-
-        label_cittàDiResidenza.setText("Città di residenza");
-
-        inp_cittàDiResidenza.addActionListener(new java.awt.event.ActionListener() {
+        button_salva1.setText("Modifica");
+        button_salva1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                inp_cittàDiResidenzaActionPerformed(evt);
+                button_salva1ActionPerformed(evt);
+                button_edit1ActionPerformed(evt);
             }
         });
-
-        button_salva.setText("Salva");
-        button_salva.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button_salvaActionPerformed(evt);
-            }
-        });
-
-        data_assistito.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        data_errori.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        label_datiAssistito.setText("Dati assistito corrente");
-
-        label_errori.setText("Errori");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,8 +110,11 @@ public class Frame_NewCustomer extends Main_Frame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label_cod_fiscale, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(label_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(button_salva1))
                             .addComponent(label_cognome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label_indirizzo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inp_indirizzoDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -123,7 +130,7 @@ public class Frame_NewCustomer extends Main_Frame {
                             .addComponent(label_datiAssistito, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label_errori, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(data_assistito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(113, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,12 +141,14 @@ public class Frame_NewCustomer extends Main_Frame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(label_datiAssistito)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                         .addComponent(data_assistito, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(inp_cod_fiscale, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)
-                        .addComponent(label_nome)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label_nome)
+                            .addComponent(button_salva1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(inp_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)
@@ -150,7 +159,7 @@ public class Frame_NewCustomer extends Main_Frame {
                         .addComponent(label_indirizzo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(inp_indirizzoDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(label_cittàDiResidenza)
@@ -162,35 +171,46 @@ public class Frame_NewCustomer extends Main_Frame {
                         .addComponent(label_errori)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(data_errori, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void inp_cognomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inp_cognomeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inp_cognomeActionPerformed
-
-    private void inp_indirizzoDiResidenzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inp_indirizzoDiResidenzaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inp_indirizzoDiResidenzaActionPerformed
 
     private void inp_cittàDiResidenzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inp_cittàDiResidenzaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inp_cittàDiResidenzaActionPerformed
 
     private void button_salvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_salvaActionPerformed
+        Assistito assistito = new Assistito(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), inp_indirizzoDiResidenza.getText(), inp_cittàDiResidenza.getText());
+        controller.salva(assistito);
+    }//GEN-LAST:event_button_salvaActionPerformed
 
-        if(inp_cod_fiscale.getText() != null){
-            Assistito assistito = new Assistito(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), inp_indirizzoDiResidenza.getText(), inp_cittàDiResidenza.getText());
-            controller.salva(assistito);
-            data_assistito.setText(assistito.toString());
+    private void inp_indirizzoDiResidenzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inp_indirizzoDiResidenzaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inp_indirizzoDiResidenzaActionPerformed
+
+    private void inp_cognomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inp_cognomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inp_cognomeActionPerformed
+
+    private void button_salva1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_salva1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_button_salva1ActionPerformed
+
+    private void button_edit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_edit1ActionPerformed
+        // TODO add your handling code here:
+        Assistito assistito;
+        if((assistito = controller.edit(inp_cod_fiscale.getText()))!=null){
+            inp_nome.setText(assistito.getAn_nome());
+            inp_cognome.setText(assistito.getAn_cognome());
+            inp_indirizzoDiResidenza.setText(assistito.getAn_indirizzo());
+            inp_cittàDiResidenza.setText(assistito.getAn_cittaDiResidenza());
         }
         else{
-            data_errori.setText("Il codice fiscale non può essere vuoto");
+            System.out.println("no non esiste");
         }
-    }//GEN-LAST:event_button_salvaActionPerformed
+    }//GEN-LAST:event_button_edit1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,26 +229,27 @@ public class Frame_NewCustomer extends Main_Frame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_NewCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_ExistsCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_NewCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_ExistsCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_NewCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_ExistsCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_NewCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_ExistsCustomer.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_NewCustomer().setVisible(true);
+                new Frame_ExistsCustomer().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton button_salva;
+    private javax.swing.JButton button_salva1;
     private javax.swing.JLabel data_assistito;
     private javax.swing.JLabel data_errori;
     private javax.swing.JTextField inp_cittàDiResidenza;

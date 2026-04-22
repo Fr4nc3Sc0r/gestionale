@@ -11,12 +11,13 @@ import java.util.Vector;
 public class Agent {
     
     public static boolean codFiscaleEsistente(Vector<Assistito> database, String cod){
+        boolean exist = false;
         for(int i = 0; i < database.size(); i++){
-            if(database.elementAt(i).an_codiceFiscale.equals(cod))
-                return true;
-            System.out.println("si esiste");
-            
+            if(database.elementAt(i).an_codiceFiscale.equals(cod)){
+                System.out.println("si esiste");   
+                exist = true;
+            }
         }
-        return false;
+        return exist;
     }
 }

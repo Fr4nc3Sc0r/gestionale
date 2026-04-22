@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
@@ -24,9 +27,13 @@
               <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="label_cod_fiscale" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="label_nome" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="label_nome" min="-2" pref="141" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="button_salva1" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <Component id="label_cognome" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
                           <Component id="label_indirizzo" alignment="0" min="-2" pref="141" max="-2" attributes="0"/>
                           <Component id="inp_indirizzoDiResidenza" alignment="0" min="-2" pref="283" max="-2" attributes="0"/>
@@ -39,14 +46,14 @@
                       </Group>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="data_errori" pref="404" max="32767" attributes="0"/>
-                          <Component id="label_datiAssistito" min="-2" pref="133" max="-2" attributes="0"/>
-                          <Component id="label_errori" min="-2" pref="124" max="-2" attributes="0"/>
+                          <Component id="data_errori" alignment="0" pref="404" max="32767" attributes="0"/>
+                          <Component id="label_datiAssistito" alignment="0" min="-2" pref="133" max="-2" attributes="0"/>
+                          <Component id="label_errori" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
                           <Component id="data_assistito" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="95" max="32767" attributes="0"/>
+              <EmptySpace pref="113" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,13 +66,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="label_datiAssistito" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
                       <Component id="data_assistito" min="-2" pref="209" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="inp_cod_fiscale" min="-2" pref="39" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
-                      <Component id="label_nome" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="label_nome" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="button_salva1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="inp_nome" min="-2" pref="39" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
@@ -78,7 +88,7 @@
                       <Component id="inp_indirizzoDiResidenza" min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="9" max="32767" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="label_cittàDiResidenza" min="-2" max="-2" attributes="0"/>
@@ -93,12 +103,49 @@
                       <Component id="data_errori" min="-2" pref="72" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="64" max="32767" attributes="0"/>
+              <EmptySpace pref="114" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
+    <Component class="javax.swing.JLabel" name="label_indirizzo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Indirizzo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_citt&#xe0;DiResidenza">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Citt&#xe0; di residenza"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="inp_citt&#xe0;DiResidenza">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inp_citt&#xe0;DiResidenzaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="button_salva">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Salva"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_salvaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="data_assistito">
+    </Component>
+    <Component class="javax.swing.JLabel" name="data_errori">
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_datiAssistito">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dati assistito corrente"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_errori">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Errori"/>
+      </Properties>
+    </Component>
     <Component class="javax.swing.JTextField" name="inp_cod_fiscale">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="Codice Fiscale"/>
@@ -132,56 +179,13 @@
         <Property name="text" type="java.lang.String" value="Cognome"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="label_indirizzo">
+    <Component class="javax.swing.JButton" name="button_salva1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Indirizzo"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="label_citt&#xe0;DiResidenza">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Citt&#xe0; di residenza"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="inp_citt&#xe0;DiResidenza">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inp_citt&#xe0;DiResidenzaActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="button_salva">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Salva"/>
+        <Property name="text" type="java.lang.String" value="Modifica"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_salvaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button_salva1ActionPerformed,button_edit1ActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="data_assistito">
-      <Properties>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="data_errori">
-      <Properties>
-        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-            <BevelBorder/>
-          </Border>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="label_datiAssistito">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Dati assistito corrente"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="label_errori">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Errori"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>
