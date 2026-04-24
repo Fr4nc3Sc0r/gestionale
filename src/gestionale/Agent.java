@@ -20,4 +20,19 @@ public class Agent {
         }
         return exist;
     }
+    
+    public static boolean login(String utente, String passwd){
+        boolean status = false;
+        if(utente.equals("lorusso") && passwd.equals("lorusso")){
+            status = true;
+        }
+        return status;
+    }
+    
+    public boolean validitaCodiceFiscale(String codiceFiscale, String nome, String cognome){
+        boolean status = false;
+        
+        String nm;
+        
+    }
 }

@@ -4,6 +4,8 @@
  */
 package gestionale;
 
+import static gestionale.Agent.login;
+
 /**
  *
  * @author franc
@@ -27,6 +29,10 @@ public class Controller {
     
     public Assistito edit(String cod_Fiscale){
         return database.getAssistito(cod_Fiscale);
+    }
+    
+    public boolean log(String string, String string1) {
+        return login(string, string1);
     }
     
 }

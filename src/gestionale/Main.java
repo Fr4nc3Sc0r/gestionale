@@ -4,7 +4,7 @@
  */
 package gestionale;
 
-import gestionale.GUI.Main_Frame;
+import gestionale.GUI.Login_Frame;
 import javax.swing.SwingUtilities;
 /**
  *
@@ -27,8 +27,8 @@ public class Main {
         
         
         SwingUtilities.invokeLater(() -> {
-            Main_Frame gui = new Main_Frame();
-            gui.showMainFrame();
+            Login_Frame gui = new Login_Frame();
+            gui.showLoginFrame();
         });
         
         
