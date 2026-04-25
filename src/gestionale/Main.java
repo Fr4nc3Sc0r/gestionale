@@ -14,8 +14,9 @@ public class Main {
 
     public static void main(String[] args) {
         
-        //Assistito assistito = new Assistito("ciccio", "ciccio","ciccio","ciccio","ciccio");
+        //Assistito assistito = new Assistito("pppsps", "peppe","esposito","ciccio","ciccio");
         //Database database = new Database();
+        //Agent agent = new Agent();
         
         //database.buffer(assistito);
         //database.svuotaBuffer();
@@ -24,6 +25,10 @@ public class Main {
         //database.print(0);
         
         //database.carica();
+        //if(agent.validitaCodiceFiscale(assistito.an_codiceFiscale, assistito.an_nome, assistito.an_cognome)){
+        //    System.out.println("gud");
+        //}
+        
         
         
         SwingUtilities.invokeLater(() -> {

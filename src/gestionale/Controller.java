@@ -5,6 +5,7 @@
 package gestionale;
 
 import static gestionale.Agent.login;
+import static gestionale.Agent.validitaCodiceFiscale;
 
 /**
  *
@@ -33,6 +34,10 @@ public class Controller {
     
     public boolean log(String string, String string1) {
         return login(string, string1);
+    }
+    
+    public boolean verifyCodFisc(String codiceFiscale, String nome, String cognome){
+        return validitaCodiceFiscale(codiceFiscale, nome, cognome);
     }
     
 }

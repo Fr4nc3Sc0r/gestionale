@@ -182,13 +182,13 @@ public class Frame_NewCustomer extends Main_Frame {
 
     private void button_salvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_salvaActionPerformed
 
-        if(inp_cod_fiscale.getText() != null){
+        if((inp_cod_fiscale.getText() != null) && (controller.verifyCodFisc(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText()))){
             Assistito assistito = new Assistito(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), inp_indirizzoDiResidenza.getText(), inp_cittàDiResidenza.getText());
             controller.salva(assistito);
             data_assistito.setText(assistito.toString());
         }
         else{
-            data_errori.setText("Il codice fiscale non può essere vuoto");
+            data_errori.setText("Il codice fiscale non può essere vuoto oppure non è valido");
         }
     }//GEN-LAST:event_button_salvaActionPerformed
 
