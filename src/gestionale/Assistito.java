@@ -5,6 +5,7 @@
 package gestionale;
 import java.util.Vector;
 import java.io.Serializable;
+import java.time.LocalDate;
 
 /**
  *
@@ -17,8 +18,9 @@ public class Assistito extends Entita implements Serializable{
     String an_cognome;
     String an_indirizzo;
     String an_cittaDiResidenza;
+    LocalDate an_dataDiNascita;
 
-    public Assistito(String an_codiceFiscale, String an_nome, String an_cognome, String an_indirizzo, String an_cittaDiResidenza) {
+    public Assistito(String an_codiceFiscale, String an_nome, String an_cognome, String an_indirizzo, String an_cittaDiResidenza, LocalDate an_dataDiNascita) {
         
         
         this.an_codiceFiscale = an_codiceFiscale;
@@ -26,12 +28,23 @@ public class Assistito extends Entita implements Serializable{
         this.an_cognome = an_cognome;
         this.an_indirizzo = an_indirizzo;
         this.an_cittaDiResidenza = an_cittaDiResidenza;
+        this.an_dataDiNascita = an_dataDiNascita;
     }
+    
+    
     
 
     
 
     public Assistito() {
+    }
+
+    public LocalDate getAn_dataDiNascita() {
+        return an_dataDiNascita;
+    }
+
+    public void setAn_dataDiNascita(LocalDate an_dataDiNascita) {
+        this.an_dataDiNascita = an_dataDiNascita;
     }
 
     

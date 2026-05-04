@@ -6,6 +6,9 @@ package gestionale.GUI;
 import gestionale.GUI.Main_Frame;
 import gestionale.Assistito;
 import gestionale.Controller;
+import java.time.LocalDate;
+import java.util.Date;
+import java.time.ZoneId;
 
 /**
  *
@@ -50,6 +53,8 @@ public class Frame_NewCustomer extends Main_Frame {
         data_errori = new javax.swing.JLabel();
         label_datiAssistito = new javax.swing.JLabel();
         label_errori = new javax.swing.JLabel();
+        label_dataDiNascita = new javax.swing.JLabel();
+        inp_dataDiNascita = new javax.swing.JSpinner();
 
         inp_cod_fiscale.setToolTipText("Codice Fiscale");
         inp_cod_fiscale.setActionCommand("<Not Set>");
@@ -97,6 +102,11 @@ public class Frame_NewCustomer extends Main_Frame {
 
         label_errori.setText("Errori");
 
+        label_dataDiNascita.setText("Data di Nascita");
+
+        inp_dataDiNascita.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, new java.util.Date(), java.util.Calendar.DAY_OF_MONTH));
+        inp_dataDiNascita.setEditor(new javax.swing.JSpinner.DateEditor(inp_dataDiNascita, "dd/MM/yyyy"));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,26 +114,28 @@ public class Frame_NewCustomer extends Main_Frame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(button_salva)
                     .addComponent(label_cod_fiscale, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(label_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label_cognome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label_indirizzo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_indirizzoDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_cod_fiscale, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_cognome, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inp_indirizzoDiResidenza, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(inp_nome, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(inp_cod_fiscale, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(inp_cognome, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                             .addComponent(label_cittàDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_cittàDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button_salva))
-                        .addGap(48, 48, 48)
+                            .addComponent(inp_cittàDiResidenza, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(label_dataDiNascita, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inp_dataDiNascita))
+                        .addGap(204, 204, 204)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(data_errori, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
                             .addComponent(label_datiAssistito, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label_errori, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(data_assistito, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(95, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,7 +146,7 @@ public class Frame_NewCustomer extends Main_Frame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(label_datiAssistito)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(data_assistito, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(inp_cod_fiscale, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -150,19 +162,24 @@ public class Frame_NewCustomer extends Main_Frame {
                         .addComponent(label_indirizzo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(inp_indirizzoDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(label_errori)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(data_errori, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(label_cittàDiResidenza)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(inp_cittàDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button_salva))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label_errori)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(data_errori, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(64, Short.MAX_VALUE))
+                        .addComponent(label_dataDiNascita)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(inp_dataDiNascita, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(button_salva)
+                        .addContainerGap())))
         );
 
         pack();
@@ -182,10 +199,16 @@ public class Frame_NewCustomer extends Main_Frame {
 
     private void button_salvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_salvaActionPerformed
 
-        if((inp_cod_fiscale.getText() != null) && (controller.verifyCodFisc(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText()))){
-            Assistito assistito = new Assistito(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), inp_indirizzoDiResidenza.getText(), inp_cittàDiResidenza.getText());
-            controller.salva(assistito);
-            data_assistito.setText(assistito.toString());
+        //inizializzazione gestione 
+        Date date = (Date) inp_dataDiNascita.getValue();
+        LocalDate dataDiNascita = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        
+        if((inp_cod_fiscale.getText() != null) && 
+           (controller.verifyCodFisc(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), 
+            dataDiNascita))){
+                Assistito assistito = new Assistito(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), inp_indirizzoDiResidenza.getText(), inp_cittàDiResidenza.getText(), dataDiNascita);
+                controller.salva(assistito);
+                data_assistito.setText(assistito.toString());
         }
         else{
             data_errori.setText("Il codice fiscale non può essere vuoto oppure non è valido");
@@ -234,11 +257,13 @@ public class Frame_NewCustomer extends Main_Frame {
     private javax.swing.JTextField inp_cittàDiResidenza;
     private javax.swing.JTextField inp_cod_fiscale;
     private javax.swing.JTextField inp_cognome;
+    private javax.swing.JSpinner inp_dataDiNascita;
     private javax.swing.JTextField inp_indirizzoDiResidenza;
     private javax.swing.JTextField inp_nome;
     private javax.swing.JLabel label_cittàDiResidenza;
     private javax.swing.JLabel label_cod_fiscale;
     private javax.swing.JLabel label_cognome;
+    private javax.swing.JLabel label_dataDiNascita;
     private javax.swing.JLabel label_datiAssistito;
     private javax.swing.JLabel label_errori;
     private javax.swing.JLabel label_indirizzo;

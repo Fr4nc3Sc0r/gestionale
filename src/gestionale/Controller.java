@@ -6,6 +6,7 @@ package gestionale;
 
 import static gestionale.Agent.login;
 import static gestionale.Agent.validitaCodiceFiscale;
+import java.time.LocalDate;
 
 /**
  *
@@ -36,8 +37,8 @@ public class Controller {
         return login(string, string1);
     }
     
-    public boolean verifyCodFisc(String codiceFiscale, String nome, String cognome){
-        return validitaCodiceFiscale(codiceFiscale, nome, cognome);
+    public boolean verifyCodFisc(String codiceFiscale, String nome, String cognome ,LocalDate dataDiNascita){
+        return validitaCodiceFiscale(codiceFiscale, nome, cognome, dataDiNascita);
     }
     
 }

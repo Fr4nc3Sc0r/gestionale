@@ -4,6 +4,7 @@
  */
 package gestionale;
 import java.util.Vector;
+import java.time.LocalDate;
 /**
  *
  * @author franc
@@ -29,18 +30,54 @@ public class Agent {
         return status;
     }
     
-    public static boolean validitaCodiceFiscale(String codiceFiscale, String nome, String cognome){
+    public static boolean validitaCodiceFiscale(String codiceFiscale, String nome, String cognome, LocalDate dataDiNascita){
         boolean status = false;
         
         codiceFiscale = codiceFiscale.toLowerCase();
         nome = nome.toLowerCase();
         cognome = cognome.toLowerCase();
-        
+                
         String nm = "";
         String cm = "";
         String cdfs = "";
         
-        for(int i = 0; i < 6; i++){
+        int anno = Integer.parseInt(codiceFiscale.substring(6, 8));
+        char meseChar = codiceFiscale.charAt(8);
+        int giorno = Integer.parseInt(codiceFiscale.substring(9, 11));
+
+        // sesso
+        if (giorno > 40) {
+            giorno -= 40;
+        }
+
+        int mese = switch (meseChar) {
+            case 'A' -> 1;
+            case 'B' -> 2;
+            case 'C' -> 3;
+            case 'D' -> 4;
+            case 'E' -> 5;
+            case 'H' -> 6;
+            case 'L' -> 7;
+            case 'M' -> 8;
+            case 'P' -> 9;
+            case 'R' -> 10;
+            case 'S' -> 11;
+            case 'T' -> 12;
+            default -> throw new IllegalArgumentException("Mese CF non valido");
+        };
+
+        // gestione anno
+        int annoCompleto;
+
+        if (anno <= LocalDate.now().getYear() % 100) {
+            annoCompleto = 2000 + anno;
+        } else {
+            annoCompleto = 1900 + anno;
+        }
+
+        LocalDate annoCodiceFiscale = LocalDate.of(annoCompleto, mese, giorno);
+        
+        for(int i = 0; i < 11; i++){
             cdfs = cdfs + codiceFiscale.charAt(i);
         }
         System.out.println(cdfs);
@@ -58,10 +95,14 @@ public class Agent {
             }
         }
         System.out.println(cm);
-        if((cm+nm).equals(cdfs)){
+        
+        
+        
+        if(((cm+nm).equals(cdfs)) && annoCodiceFiscale.equals(dataDiNascita)){
             status = true;
         }
         return status;
-        
     }
+    
 }
+
