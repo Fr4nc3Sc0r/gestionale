@@ -69,9 +69,7 @@ public class Database {
     }
     
     public void carica(){
-        
-        databaseAssistiti.removeAllElements();
-        
+              
         
         
         try{

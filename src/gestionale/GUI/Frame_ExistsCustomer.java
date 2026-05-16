@@ -5,6 +5,9 @@
 package gestionale.GUI;
 import gestionale.GUI.Main_Frame;
 import gestionale.Assistito;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 /**
  *
@@ -48,8 +51,8 @@ public class Frame_ExistsCustomer extends Main_Frame {
         label_nome = new javax.swing.JLabel();
         label_cognome = new javax.swing.JLabel();
         button_salva1 = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        label_dataDiNascita = new javax.swing.JLabel();
+        inp_dataDiNascita = new javax.swing.JSpinner();
 
         label_indirizzo.setText("Indirizzo");
 
@@ -101,6 +104,11 @@ public class Frame_ExistsCustomer extends Main_Frame {
             }
         });
 
+        label_dataDiNascita.setText("Data di Nascita");
+
+        inp_dataDiNascita.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, new java.util.Date(), java.util.Calendar.DAY_OF_MONTH));
+        inp_dataDiNascita.setEditor(new javax.swing.JSpinner.DateEditor(inp_dataDiNascita, "dd/MM/yyyy"));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -117,13 +125,15 @@ public class Frame_ExistsCustomer extends Main_Frame {
                                 .addComponent(button_salva1))
                             .addComponent(label_cognome, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label_indirizzo, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_indirizzoDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_cod_fiscale, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_cognome, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inp_indirizzoDiResidenza, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(inp_nome, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(inp_cod_fiscale, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(inp_cognome, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
                             .addComponent(label_cittàDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inp_cittàDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button_salva))
+                            .addComponent(inp_cittàDiResidenza, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE)
+                            .addComponent(button_salva)
+                            .addComponent(label_dataDiNascita, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inp_dataDiNascita))
                         .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(data_errori, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
@@ -162,16 +172,21 @@ public class Frame_ExistsCustomer extends Main_Frame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(label_errori)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(data_errori, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(label_cittàDiResidenza)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(inp_cittàDiResidenza, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(button_salva))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(label_errori)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(label_dataDiNascita)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(data_errori, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                        .addComponent(inp_dataDiNascita, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addComponent(button_salva)
+                .addGap(41, 41, 41))
         );
 
         pack();
@@ -182,8 +197,20 @@ public class Frame_ExistsCustomer extends Main_Frame {
     }//GEN-LAST:event_inp_cittàDiResidenzaActionPerformed
 
     private void button_salvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_salvaActionPerformed
-        Assistito assistito = new Assistito(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), inp_indirizzoDiResidenza.getText(), inp_cittàDiResidenza.getText());
-        controller.salva(assistito);
+        //inizializzazione gestione 
+        Date date = (Date) inp_dataDiNascita.getValue();
+        LocalDate dataDiNascita = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        
+        if((inp_cod_fiscale.getText() != null) && 
+           (controller.verifyCodFisc(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), 
+            dataDiNascita))){
+                Assistito assistito = new Assistito(inp_cod_fiscale.getText(), inp_nome.getText(), inp_cognome.getText(), inp_indirizzoDiResidenza.getText(), inp_cittàDiResidenza.getText(), dataDiNascita);
+                controller.salva(assistito);
+                data_assistito.setText(assistito.toString());
+        }
+        else{
+            data_errori.setText("Il codice fiscale non può essere vuoto oppure non è valido");
+        }
     }//GEN-LAST:event_button_salvaActionPerformed
 
     private void inp_indirizzoDiResidenzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inp_indirizzoDiResidenzaActionPerformed
@@ -201,11 +228,16 @@ public class Frame_ExistsCustomer extends Main_Frame {
     private void button_edit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_edit1ActionPerformed
         // TODO add your handling code here:
         Assistito assistito;
+       
         if((assistito = controller.edit(inp_cod_fiscale.getText()))!=null){
             inp_nome.setText(assistito.getAn_nome());
             inp_cognome.setText(assistito.getAn_cognome());
             inp_indirizzoDiResidenza.setText(assistito.getAn_indirizzo());
             inp_cittàDiResidenza.setText(assistito.getAn_cittaDiResidenza());
+            Date date = Date.from(
+            assistito.getAn_dataDiNascita().atStartOfDay(ZoneId.systemDefault()).toInstant()
+            );
+            inp_dataDiNascita.setValue(date);
         }
         else{
             System.out.println("no non esiste");
@@ -255,11 +287,13 @@ public class Frame_ExistsCustomer extends Main_Frame {
     private javax.swing.JTextField inp_cittàDiResidenza;
     private javax.swing.JTextField inp_cod_fiscale;
     private javax.swing.JTextField inp_cognome;
+    private javax.swing.JSpinner inp_dataDiNascita;
     private javax.swing.JTextField inp_indirizzoDiResidenza;
     private javax.swing.JTextField inp_nome;
     private javax.swing.JLabel label_cittàDiResidenza;
     private javax.swing.JLabel label_cod_fiscale;
     private javax.swing.JLabel label_cognome;
+    private javax.swing.JLabel label_dataDiNascita;
     private javax.swing.JLabel label_datiAssistito;
     private javax.swing.JLabel label_errori;
     private javax.swing.JLabel label_indirizzo;

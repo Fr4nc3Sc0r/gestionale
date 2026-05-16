@@ -45,26 +45,36 @@ public class Agent {
         char meseChar = codiceFiscale.charAt(8);
         int giorno = Integer.parseInt(codiceFiscale.substring(9, 11));
 
+        System.out.println(meseChar);
+        
         // sesso
         if (giorno > 40) {
             giorno -= 40;
         }
 
         int mese = switch (meseChar) {
-            case 'A' -> 1;
-            case 'B' -> 2;
-            case 'C' -> 3;
-            case 'D' -> 4;
-            case 'E' -> 5;
-            case 'H' -> 6;
-            case 'L' -> 7;
-            case 'M' -> 8;
-            case 'P' -> 9;
-            case 'R' -> 10;
-            case 'S' -> 11;
-            case 'T' -> 12;
-            default -> throw new IllegalArgumentException("Mese CF non valido");
+            case 'a' -> 1;
+            case 'b' -> 2;
+            case 'c' -> 3;
+            case 'd' -> 4;
+            case 'e' -> 5;
+            case 'h' -> 6;
+            case 'l' -> 7;
+            case 'm' -> 8;
+            case 'p' -> 9;
+            case 'r' -> 10;
+            case 's' -> 11;
+            case 't' -> 12;
+            default -> 0;
         };
+        
+        System.out.println(mese);
+        System.out.println(anno);
+        System.out.println(giorno);
+        
+        if(mese == 0){
+            return false;
+        }
 
         // gestione anno
         int annoCompleto;
@@ -74,8 +84,13 @@ public class Agent {
         } else {
             annoCompleto = 1900 + anno;
         }
+        
+        System.out.println(annoCompleto);
 
         LocalDate annoCodiceFiscale = LocalDate.of(annoCompleto, mese, giorno);
+        
+        System.out.println(annoCodiceFiscale);
+        System.out.println(dataDiNascita);
         
         for(int i = 0; i < 11; i++){
             cdfs = cdfs + codiceFiscale.charAt(i);
@@ -96,9 +111,20 @@ public class Agent {
         }
         System.out.println(cm);
         
+        String annoS;
         
+        if(anno < 10){
+            annoS = "0" + String.valueOf(anno);
+        }
+        else{
+            annoS = String.valueOf(anno);
+        }
+        String giornoS = String.valueOf(giorno);
         
-        if(((cm+nm).equals(cdfs)) && annoCodiceFiscale.equals(dataDiNascita)){
+        System.out.println(annoS);
+        System.out.println(giornoS);
+        System.out.println(cm+nm+annoS+meseChar+giornoS);
+        if(((cm+nm+annoS+meseChar+giornoS).equals(cdfs)) && annoCodiceFiscale.equals(dataDiNascita)){
             status = true;
         }
         return status;
